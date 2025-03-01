@@ -164,32 +164,216 @@ header::before {
 
 /* services */
 
-.service-block {
-    background: #ebeef0;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 400px; /* Fixed width */
-    height: 400px; /* Fixed height */
+
+
+/* General Page Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Services Section */
+.our_services {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.headline {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1c3f94;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.grid-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Service Card Styling */
+.grid-x {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-         
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
 }
-.service-block:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+.grid-x:nth-child(even) {
+    flex-direction: row-reverse; /* Alternating sections */
 }
-.service-block i {
-    margin-bottom: 15px;
+
+/* Image Styling */
+.imgsctn img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
 }
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+
+/* Service Title */
+.grid-x h1 {
+    font-size: 1.8rem;
+    color: #1c3f94;
+    margin-bottom: 10px;
 }
+
+/* Service Description */
+.grid-x p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Read More Button */
+.link-to a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1c3f94;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.link-to a:hover {
+    background-color: #0f2c6a;
+}
+
+/* Page Top Link */
+.PageTop {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.PageTop a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #1c3f94;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-x {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .grid-x img {
+        width: 80%;
+        margin: auto;
+    }
+
+    .grid-x h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/* General Page Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Section Styling */
+.services-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1c3f94;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+/* Service Card */
+.service-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h4 {
+    font-size: 1.5rem;
+    color: #1c3f94;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* CTA Button */
+.service-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1c3f94;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.service-card .btn:hover {
+    background-color: #0f2c6a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+
+
+
 
 /* About Us */
 
