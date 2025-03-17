@@ -109,19 +109,60 @@
                 </div>
                 
 
-                <div class="row vertical_content_manage mt-5" section id="Testimonials" class="content-section">
-                    <div class="col-lg-6">
-                        <div class="about_header_main mt-3">
-                            
-                            
-                            <section class="testimonials-section bg-light py-5" id="testimonials">
-                                <div class="container">
-                                    <h2 class="text-center mb-5 font-weight-bold">What Our Clients Say</h2>
-                                    
-                                    </div>
-                                </div>
+                <section class="testimonials py-5 bg-light">
+                    <div class="container">
+                      <h2 class="text-center mb-4">What Our Clients Say</h2>
+                  
+                      <!-- Placeholder for Reviews -->
+                      <div id="reviews-container" class="row justify-content-center gap-3"></div>
+                  
+                      <!-- Button to Google Reviews Page -->
+                      <div class="text-center mt-4">
+                        <a href="https://www.google.com/search?q=TechRestoreServices/review" class="btn btn-primary" target="_blank">Leave a Review</a>
+                      </div>
+                    </div>
+                  </section>
 
-                                
+                  <!-- Fetch Reviews Script -->
+<script>
+    const apiKey = AIzaSyAvJcRmuG4L22HGudLUdOzp6s8qaOgZscc;
+    const placeId = ChIJrTLr-GyuEmsRBfy61i59si0; // Get from https://developers.google.com/maps/documentation/places/web-service/place-id
+    const reviewsContainer = document.getElementById("reviews-container");
+  
+    async function fetchGoogleReviews() {
+      try {
+        const response = await fetch(
+          `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJrTLr-GyuEmsRBfy61i59si0&fields=reviews&key=AIzaSyAvJcRmuG4L22HGudLUdOzp6s8qaOgZscc`
+        );
+        const data = await response.json();
+  
+        const reviews = data.result.reviews.slice(0, 3); // Get top 3 reviews
+        reviews.forEach((review) => {
+          const stars = "⭐️".repeat(review.rating);
+  
+          reviewsContainer.innerHTML += `
+            <div class="card p-3 shadow text-center">
+              <h5 class="star-rating">${stars}</h5>
+              <p class="mb-2">"${review.text}"</p>
+              <strong>— ${review.author_name}</strong>
+            </div>`;
+        });
+      } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+        reviewsContainer.innerHTML = `<p class="text-center text-danger">Failed to load reviews.</p>`;
+      }
+    }
+  
+    fetchGoogleReviews();
+  </script>
+  
+  <!-- Bootstrap JS (for layout support) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                 
+                  
+                
+
+
                             </section>
                             <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 

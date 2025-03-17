@@ -423,6 +423,22 @@ body {
 
 
 
+/* testimonial */
+
+.testimonials .card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    width: 320px;
+  }
+  .testimonials .card:hover {
+    transform: scale(1.05);
+  }
+  .star-rating {
+    color: #FFD700;
+  }
+
+
 /* Containers */
 
 
